@@ -24,7 +24,6 @@ USER appuser
 # ╚══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 FROM eclipse-temurin:17-jdk-jammy AS prod
 
-
 WORKDIR /app
 
 # Install dependencies and Maven in a single layer
