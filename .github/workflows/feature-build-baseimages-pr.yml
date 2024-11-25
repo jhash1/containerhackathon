@@ -60,7 +60,7 @@ jobs:
                   --address "https://app0.cloud.twistlock.com/app0-93082728" \
                   --user ${{ secrets.PRISMA_USERNAME }} \
                   --password ${{ secrets.PRISMA_PASSWORD }} \
-                  ${{ env.registry_name }}/$(basename $containerpath):$environment-$imagetag
+                  ${{ env.registry_name }}/$(basename $containerpath):$imagetag
 
             - name: Push Images to Container Registry
               run: |
