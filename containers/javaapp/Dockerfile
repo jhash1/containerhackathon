@@ -1,4 +1,4 @@
-FROM eclipse-temurin:17-jdk-jammy AS dev
+FROM ghcr.io/jhash1/java:base-dev-b2019ddb1b072da175345ae0ea15f1f8d63d0d3b AS dev
 
 WORKDIR /app
 
