@@ -40,15 +40,30 @@ jobs:
               run: | 
                 docker build --target $environment -t ${{ env.registry_name }}/$(basename $containerpath):$environment-$imagetag .
 
-            - name: Run Prisma Cloud 
-              id: prisma-cloud
-              uses: bridgecrewio/checkov-action@master
-              env:
-                PRISMA_API_URL: https://api0.prismacloud.io
-              with:
-                api-key: ${{ secrets.BC_API_KEY }}
-                use_enforcement_rules: true
-        
+            #- name: Run Prisma Cloud 
+            #  id: prisma-cloud
+            #  uses: bridgecrewio/checkov-action@master
+            #  env:
+            #   PRISMA_API_URL: https://api0.prismacloud.io
+            #  with:
+            #    api-key: ${{ secrets.BC_API_KEY }}
+            #    use_enforcement_rules: true
+
+            - name: Download TwistCLI
+              run: |
+                curl -u "${{ secrets.PRISMA_USERNAME }}:${{ secrets.PRISMA_PASSWORD }}" \
+                  -o twistcli \
+                  "https://${{ secrets.PRISMA_URL }}/api/v1/util/twistcli"
+                chmod +x twistcli
+
+            - name: Scan Docker Image with TwistCLI
+              run: |
+                ./twistcli images scan \
+                  --address "https://${{ secrets.PRISMA_URL }}" \
+                  --user ${{ secrets.PRISMA_USERNAME }} \
+                  --password ${{ secrets.PRISMA_PASSWORD }} \
+                  ${{ env.registry_name }}/$(basename $containerpath):$environment-$imagetag
+
             - name: Push Images to Container Registry
               run: |
                 docker push ${{ env.registry_name }}/$(basename $containerpath):$environment-$imagetag
