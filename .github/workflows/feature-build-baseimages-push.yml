@@ -59,7 +59,7 @@ jobs:
             - name: Scan Docker Image with TwistCLI
               run: |
                 ./twistcli images scan \
-                  --address "https://app0.cloud.twistlock.com/app0-93082728/api/v1/util/twistcli" \
+                  --address "https://app0.cloud.twistlock.com/app0-93082728" \
                   --user ${{ secrets.PRISMA_USERNAME }} \
                   --password ${{ secrets.PRISMA_PASSWORD }} \
                   ${{ env.registry_name }}/$(basename $containerpath):$environment-$imagetag
