@@ -1,7 +1,7 @@
 # ╔══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
 # ║ Dev Stage -- Individual layers to make finding and fixing issues easier                                                                  ║
 # ╚══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
-FROM ghcr.io/jhash1/java:base-dev-b2019ddb1b072da175345ae0ea15f1f8d63d0d3b AS base-dev 
+FROM eclipse-temurin:17-jdk-jammy AS base-dev 
 
 WORKDIR /app
 
@@ -22,7 +22,7 @@ USER appuser
 # ╔══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
 # ║ Prod Stage -- Combine commands into fewer layers for faster build times and better layer caching                                         ║
 # ╚══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
-FROM ghcr.io/jhash1/java:latest AS prod
+FROM eclipse-temurin:17-jdk-jammy AS prod
 
 WORKDIR /app
 
