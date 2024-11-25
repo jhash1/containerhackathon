@@ -5,12 +5,13 @@ FROM eclipse-temurin:17-jdk-jammy AS base-dev
 
 WORKDIR /app
 
+
 RUN apt-get update
 RUN apt-get install --no-install-recommends -y curl
 RUN apt-get install --no-install-recommends -y git
 RUN apt-get install --no-install-recommends -y maven
 
-# Security: Create a non-root user
+# Security: Create a non-root user 
 ARG USER_ID=1000
 ARG GROUP_ID=1000
 RUN groupadd -g ${GROUP_ID} appuser
