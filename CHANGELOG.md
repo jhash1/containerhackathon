@@ -3,6 +3,22 @@
 ## [1.1.0](https://github.com/jhash1/containerhackathon/compare/v1.0.2...v1.1.0) (2024-11-26)
 
 
+Install from command line:
+
+
+``` shell
+docker pull ghcr.io/jhash1/java:v1.1.0
+```
+
+
+Use as base image in Dockerfile:
+
+
+``` shell
+FROM ghcr.io/jhash1/java:v1.1.0
+```
+
+
 ### Features
 
 * add labels ([3f189d4](https://github.com/jhash1/containerhackathon/commit/3f189d468cf4e4981e92bc887342144c5f34d5f0))
