@@ -38,6 +38,21 @@ jobs:
               run: | 
                 docker build --target $environment -t ${{ env.registry_name }}/$(basename $containerpath):$imagetag .
 
+            - name: Download TwistCLI
+              run: |
+                curl -u "${{ secrets.PRISMA_USERNAME }}:${{ secrets.PRISMA_PASSWORD }}" \
+                -o twistcli \
+                "https://app0.cloud.twistlock.com/app0-93082728/api/v1/util/twistcli"
+                chmod +x twistcli
+
+            - name: Scan Docker Image with TwistCLI
+              run: |
+                ./twistcli images scan \
+                  --address "https://app0.cloud.twistlock.com/app0-93082728" \
+                  --user ${{ secrets.PRISMA_USERNAME }} \
+                  --password ${{ secrets.PRISMA_PASSWORD }} \
+                  ${{ env.registry_name }}/$(basename $containerpath):$imagetag
+
             - name: Push Images to Container Registry
               run: |
                 docker push ${{ env.registry_name }}/$(basename $containerpath):$imagetag
