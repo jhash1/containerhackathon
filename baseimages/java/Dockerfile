@@ -9,7 +9,7 @@ WORKDIR /app
 RUN apt-get update
 RUN apt-get install --no-install-recommends -y curl
 RUN apt-get install --no-install-recommends -y git
-RUN apt-get install --no-install-recommends -y maven
+#RUN apt-get install --no-install-recommends -y maven
 
 # Security: Create a non-root user 
 ARG USER_ID=1000
@@ -30,7 +30,7 @@ WORKDIR /app
 RUN apt-get update && apt-get install --no-install-recommends -y \
     git \
     curl \
-    maven \
+    # maven \
     # Clean up
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
