@@ -8,6 +8,7 @@ ENTRYPOINT ["sh","entrypoint.sh"]
 
 FROM ghcr.io/jhash1/java:1.0.0 AS prod
 
+LABEL VERSION=java-apps
 
 WORKDIR /app
 
