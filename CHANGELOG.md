@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.1.0](https://github.com/jhash1/containerhackathon/compare/v1.0.2...v1.1.0) (2024-11-26)
+
+
+### Features
+
+* add labels ([3f189d4](https://github.com/jhash1/containerhackathon/commit/3f189d468cf4e4981e92bc887342144c5f34d5f0))
+* added scanbox scanning ([f9948d6](https://github.com/jhash1/containerhackathon/commit/f9948d6eac5e2ecdaca8e2917d273cf5a0dac362))
+
+
+### Bug Fixes
+
+* added space ([2ce5865](https://github.com/jhash1/containerhackathon/commit/2ce5865b1c20103b592dd41e217afc8bcadcdda3))
+
 ## [1.0.2](https://github.com/jhash1/containerhackathon/compare/v1.0.1...v1.0.2) (2024-11-26)
 
 
