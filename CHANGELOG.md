@@ -3,6 +3,22 @@
 ## [1.0.2](https://github.com/jhash1/containerhackathon/compare/v1.0.1...v1.0.2) (2024-11-26)
 
 
+Install from command line:
+
+
+``` shell
+docker pull ghcr.io/jhash1/java:v1.0.2
+```
+
+
+Use as base image in Dockerfile:
+
+
+``` shell
+FROM ghcr.io/jhash1/java:v1.0.2
+```
+
+
 ### Bug Fixes
 
 * added in vuln ([5f1a57c](https://github.com/jhash1/containerhackathon/commit/5f1a57c8009f05f945e9d4c7fd42b313e9e221ed))
