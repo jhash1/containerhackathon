@@ -11,7 +11,7 @@ jobs:
         runs-on: ubuntu-latest
         env:
             environment: prod    
-            imagetag: "latest"
+            imagetag: "1.0.0"
             containerpath: "baseimages/java"
             registry: "ghcr.io/${{ github.repository_owner }}"
         permissions: 
