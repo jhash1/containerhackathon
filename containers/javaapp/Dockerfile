@@ -12,6 +12,7 @@ LABEL VERSION=java-apps
 
 WORKDIR /app
 
+
 COPY spring-core-5.0.0.RELEASE.jar /app/spring-core-5.0.0.RELEASE.jar
 COPY entrypoint.sh /app/entrypoint.sh
 ENTRYPOINT ["sh","entrypoint.sh"]
